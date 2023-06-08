@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+.app-wrapper{
+  background-color: rgb(163, 163, 192);
+  min-width: 450px;
+  min-height: 650px;
+  padding:30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 3px 6px 40px #000;
+  margin-bottom: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button-create{
+background-color:rgb(26, 197, 188);
+margin-right: 10px;
+width: 100px;
+border-radius: 10px;
+padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-edit{
+color: lightpink;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  background-color: linear-gradient(to right bottom, white, rgb(245, 244, 244));
+  width: 100%;
+  min-height: 100hv;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.restaurant-item{
+  outline: none;
+  width: 260px;
+  padding: 15px;
+  margin-right: 25px;
+  font-size: 15px;
+  color: #0f0e0e;
+  border-radius: 10px;
 }
