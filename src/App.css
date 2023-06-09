@@ -18,8 +18,36 @@ padding: 5px;
 }
 
 .button-edit{
-color: lightpink;
+background-color: lightpink;
+margin-right: 10px;
+width: 80px;
+border-radius: 10px;
+padding: 5px;
 }
+
+.button-add{
+  background-color: white;
+  margin-right: 10px;
+  width: 120px;
+  border-radius: 10px;
+  padding: 5px;
+  }
+
+.button-delete{
+  background-color: rgb(224, 70, 70);
+  margin-right: 10px;
+  width: 80px;
+  border-radius: 10px;
+  padding: 5px;
+  }
+  
+  .button-details{
+    background-color:rgb(26, 197, 188);
+    margin-right: 10px;
+    width: 80px;
+    border-radius: 10px;
+    padding: 5px;
+    }
 
 .container{
   background-color: linear-gradient(to right bottom, white, rgb(245, 244, 244));

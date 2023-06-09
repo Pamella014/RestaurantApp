@@ -56,7 +56,7 @@ const RestaurantCreate = () => {
         <p/>
         <input
           className='restaurant-item'
-          type="text"
+          type="file"
           placeholder="Image URL"
           value={image}
           onChange={(e) => setImage(e.target.value)}
