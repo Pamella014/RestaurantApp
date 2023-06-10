@@ -3,43 +3,48 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import RestaurantDetails from './RestaurantDetails';
 import { ApiRouteUrl } from './ApiRoute';
-import { useNavigate } from "react-router-dom"
+
 
 
 const RestaurantList = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const navigate = useNavigate();
 
-  const handleEditRestaurant= async (id) =>{
+
+  // const handleEditRestaurant= async (id) =>{
+  //   try {
+  //     await axios.get(`${ApiRouteUrl.apiUrl}/restaurants/${id}/edit`);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+
+  const handleGetRestaurant = async () => {
     try {
-      await axios.get(`${ApiRouteUrl.apiUrl}/restaurants/${id}/edit`);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    const handleGetRestaurant = async () => {
-      try {
-        const response = await axios.get(`${ApiRouteUrl.apiUrl}/restaurants`);
-        setRestaurants(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    handleGetRestaurant();
-  }, []);
-
-  
-  const deleteRestaurant = async (id) => {
-    try {
-      await axios.delete(`${ApiRouteUrl.apiUrl}/restaurants/${id}`);
+      const response = await axios.get(`${ApiRouteUrl.apiUrl}/restaurants`);
+      setRestaurants(response.data);
     } catch (error) {
       console.error(error);
     }
   };
-  
- 
+
+  useEffect(() => {
+   
+    handleGetRestaurant();
+  }, []);
+
+    
+//  const  handleReload = () => {
+//   window.location.reload();
+// };
+
+  const deleteRestaurant = async (id) => {
+    try {
+      await axios.delete(`${ApiRouteUrl.apiUrl}/restaurants/${id}`);
+      handleGetRestaurant()
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className='container'>

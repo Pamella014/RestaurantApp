@@ -19,6 +19,7 @@ const RestaurantEdit = () => {
   const handleGetRestaurant = () => {
     axios.get(`${ApiRouteUrl.apiUrl}/restaurants/${id}`).then(res=>{
         const { name, cuisine, location, image } = res.data;
+        // console.log(res.data)
         setName(name);
         setLocation(location);
         setCuisine(cuisine)

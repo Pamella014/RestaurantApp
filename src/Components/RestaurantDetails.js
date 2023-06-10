@@ -7,32 +7,36 @@ const RestaurantDetails = () => {
   const { id } = useParams();
   const [restaurant, setRestaurant] = useState(null);
 
-  useEffect(() => {
-    const handleGetRestaurant = () => {
-      axios.get(`${ApiRouteUrl.apiUrl}/restaurants/${id}`). then(res => {
-         const data = res.data
-         setRestaurant(data);
-       }).catch (error => 
-         console.error(error)) 
-     }
- 
-   if (!restaurant) {
-     return <div>Loading...</div>;
+  
+
+  const handleGetRestaurant = () => {
+    axios.get(`${ApiRouteUrl.apiUrl}/restaurants/${id}`). then(res => {
+       const data = res.data
+       setRestaurant(data);
+     }).catch (error => 
+       console.error(error)) 
    }
+     
+   useEffect(() => {
+  
     handleGetRestaurant();
   }, []);
-
-
-
-  return (
-    <div>
-      <h1>Restaurant Details</h1>
-      <h2>{restaurant.name}</h2>
-      <p>Cuisine Type: {restaurant.cuisine}</p>
-      <p>Location: {restaurant.location}</p>
-      <img src={restaurant.image} alt={restaurant.name} />
-</div>
-  );
+ 
+   if (!restaurant) {
+    return <div>Loading...</div>;
+  }
+  else{
+    return (
+      <div>
+        <h1>Restaurant Details</h1>
+        <h2>{restaurant?.name}</h2>
+        <p>Cuisine Type: {restaurant?.cuisine}</p>
+        <p>Location: {restaurant?.location}</p>
+        <img src={restaurant?.image} alt={restaurant?.name} />
+  </div>
+    );
+  }
+  
 };
 
 export default RestaurantDetails;
