@@ -79,7 +79,7 @@ const RestaurantEdit = () => {
          onChange={(e) => setImage(e.target.value)}
          required
        />
-        <button type="submit">Update</button>
+        <button className='button-edit' type="submit">Update</button>
       </form>
       </div>
      

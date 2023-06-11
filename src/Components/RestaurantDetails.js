@@ -27,13 +27,15 @@ const RestaurantDetails = () => {
   }
   else{
     return (
-      <div>
+      <div className='container'>
+      <div className='app-wrapper'>
         <h1>Restaurant Details</h1>
         <h2>{restaurant?.name}</h2>
         <p>Cuisine Type: {restaurant?.cuisine}</p>
         <p>Location: {restaurant?.location}</p>
         <img src={restaurant?.image} alt={restaurant?.name} />
   </div>
+</div>
     );
   }
   
